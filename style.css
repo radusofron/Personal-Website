@@ -142,17 +142,18 @@ nav {
   content: "";
   position: absolute;
   bottom: -0.25rem;
-  left: 25%;
+  left: 50%;
+  right: 50%;
   border-radius: 1rem;
 
   height: 0.25rem;
-  width: 0%;
 
-  transition: 200ms;
   background-color: var(--underline-text);
+  transition: left 200ms, right 200ms;
 }
 .nav-link.active::before {
-  width: 50%;
+  left: 25%;
+  right: 25%;
 }
 label.theme-switcher {
   position: absolute;
