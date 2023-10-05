@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="index.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Radu Sofron's Website</title>
+</head>
+
+<body>
+
+    <!-- Script runs before page is rendered -->
+    <script>
+        // Extract body
+        const body = document.body;
+
+        // Detect favourite theme if any
+        if (localStorage.getItem("darkMode") === "true") {
+            body.classList.add("dark");
+        }
+    </script>
+
+    <div class="container">
+
+        <span id="home"></span>
+
+        <header>
+            <nav>
+                <a href="index.html#home" class="nav-link active home">Home</a>
+                <a href="index.html#about" class="nav-link about">About me</a>
+                <a href="index.html#skills" class="nav-link skills">Skills</a>
+                <a href="index.html#projects" class="nav-link projects">Projects</a>
+            </nav>
+            <label for="theme-checkbox" class="theme-switcher">
+                <img src="./assets/icons/sun.svg" id="sun">
+                <img src="./assets/icons/moon.svg" id="moon">
+                <!-- Script runs after sun and moon images are rendered -->
+                <script>
+                    // Extract theme icons
+                    const sunIcon = document.getElementById("sun");
+                    const moonIcon = document.getElementById("moon");
+
+                    // Detect favourite theme if any
+                    if (localStorage.getItem("darkMode") === "true") {
+                        sunIcon.classList.add("dark");
+                        moonIcon.classList.add("dark");
+                    }
+                </script>
+            </label>
+            <input type="checkbox" id="theme-checkbox">
+        </header>
+
+        <article class="home">
+            <div class="headings">
+                <h1 class="consolas-font">Hello world!</h1>
+                <h2 class="consolas-font">I'm Radu.</h2>
+            </div>
+            <img class="hiro-illustration" src="./assets/illustrations/home-illustration.svg">
+            <p>I am a recent Computer Science graduate, eager to build a carrer in IT.</p>
+            <ul class="contact-options">
+                <li class="contact-option">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=radu.sofron169@gmail.com" target="_blank">
+                        <img src="./assets/icons/mail.svg">
+                    </a>
+                </li>
+                <li class="contact-option">
+                    <a href="https://www.linkedin.com/in/radu-sofron-277195223" target="_blank">
+                        <img src="./assets/icons/linkedin.svg">
+                    </a>
+                </li>
+                <li class="contact-option">
+                    <a href="https://github.com/radusofron" target="_blank">
+                        <img src="./assets/icons/github.svg">
+                    </a>
+                </li>
+            </ul>
+
+            <span id="about"></span>
+
+        </article>
+
+        <article class="about">
+            <section class="summary">
+                <div class="icon-container">
+                    <img src="./assets/icons/summary.svg">
+                </div>
+                <h3>Summary</h3>
+                <div class="paragraphs">
+                    <p class="summary">
+                        A recent Computer Science graduate, I am an ambitious and sociable person, eager to build a
+                        career
+                        in IT. Quick to adapt and open to learning any programming language or framework.
+                    </p>
+                    <p class="summary">
+                        Throughout my academic journey, I have discovered a strong passion for the Web Development
+                        field,
+                        enjoying both Front-End and Back-End domains. Driven by this enthusiasm, I have actively engaged
+                        in
+                        researching and learning more about it.
+                    </p>
+                </div>
+            </section>
+
+            <section class="education">
+                <div class="icon-container">
+                    <img src="./assets/icons/education.svg">
+                </div>
+                <h3>Education</h3>
+                <div class="paragraphs">
+                    <div class="uni">
+                        <p class="institution">
+                            Graduate, Faculty of Computer Science, Iasi, Romania (8.50)
+                        </p>
+                        <p class="date">
+                            September 2020 - July 2023
+                        </p>
+                    </div>
+                    <div class="hs">
+                        <p class="institution">
+                            Graduate, “Dimitrie Ghika” High School: Mathematics and Computer Science profile, Romania
+                            (9.56)
+                        </p>
+                        <p class="date">
+                            September 2016 - July 2020
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <span id="skills"></span>
+
+        </article>
+
+        <article class="skills">
+            <div class="grid">
+                <section class="front-end">
+                    <div class="icon-container">
+                        <img src="./assets/icons/front-end.svg">
+                    </div>
+                    <h3>Front-End Development</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React.js</li>
+                        <li>TypeScript</li>
+                        <li>Web Design</li>
+                        <li>Figma</li>
+                    </ul>
+                </section>
+
+                <div class="design-line"></div>
+
+                <section class="back-end">
+                    <div class="icon-container">
+                        <img src="./assets/icons/back-end.svg">
+                    </div>
+                    <h3>Back-End Development</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>Flask</li>
+                        <li>PHP</li>
+                        <li>SQL databases</li>
+                        <li>NoSQL databases</li>
+                    </ul>
+                </section>
+            </div>
+
+            <section class="others">
+                <div class="icon-container">
+                    <img src="./assets/icons/more.svg">
+                </div>
+                <h3>Others</h3>
+                <ul>
+                    <li>Algorithm Design</li>
+                    <li>Machine Learning</li>
+                    <li>GitHub</li>
+                </ul>
+            </section>
+
+            <span id="projects"></span>
+
+        </article>
+
+        <article class="projects">
+            <div class="project">
+
+            </div>
+            <div class="project"></div>
+            <div class="project"></div>
+            <div class="project"></div>
+            <div class="project"></div>
+            <div class="project"></div>
+        </article>
+
+    </div>
+</body>
+
+</html>
