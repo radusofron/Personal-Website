@@ -38,7 +38,7 @@ function detectViewportArticle() {
   window.addEventListener("scroll", function () {
     // Detect changes of current article on viewport
     articleStartingPoints.forEach((articleStartingPoint) => {
-      if (window.scrollY > articleStartingPoint.offsetTop) {
+      if (window.scrollY >= articleStartingPoint.offsetTop) {
         currentArticleId = articleStartingPoint.id;
       }
     });

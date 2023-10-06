@@ -7,9 +7,6 @@
   --white: #fdfffc;
   --purple: #765bdd;
 
-  /* Text*/
-  --side-text: #8c8cba;
-
   /* FONT SIZE */
   /* 50px */
   --fs-big-title: 3.125rem;
@@ -42,9 +39,13 @@
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /* Light Mode */
-  --body-bg: #e8e8f7;
+  --body-bg: hsl(240, 48%, 94%);
   --container-bg: rgb(253, 255, 252, 0.5);
   --container-border: rgb(253, 255, 252, 0.8);
   --header-bg: #f3f4f9;
@@ -52,9 +53,13 @@ body {
   --box-shadow: rgb(50, 52, 50, 0.25);
   --design-line: #e8e8f7;
   --text: #323432;
+  --side-text: rgb(50, 52, 50, 0.5);
   --highlight-text: #ff474f;
   --underline-text: #ff474f;
   --selection-text: rgb(255, 71, 79, 0.25);
+  --scroll-bar-background: #e8e8f7;
+  --scroll-bar-thumb: rgb(50, 52, 50, 0.25);
+  --scroll-bar-thumb-hover: rgb(50, 52, 50, 0.5);
 
   background-color: var(--body-bg);
 }
@@ -66,12 +71,16 @@ body.dark {
   --container-border: #261a4d;
   --header-bg: #3c325f;
   --icon-bg: #765bdd;
-  --box-shadow: rgb(253, 255, 252, 0.2);
+  --box-shadow: rgb(253, 255, 252, 0.1);
   --design-line: #261a4d;
   --text: rgb(253, 255, 252, 0.9);
+  --side-text: #8c8cba;
   --highlight-text: #977bff;
   --underline-text: rgb(253, 255, 252, 0.9);
   --selection-text: rgb(5, 168, 170, 0.25);
+  --scroll-bar-background: #1a0e43;
+  --scroll-bar-thumb: rgb(253, 255, 252, 0.15);
+  --scroll-bar-thumb-hover: #261a4d;
 }
 
 /* GENERAL */
@@ -89,6 +98,21 @@ p::selection,
 a::selection,
 img::selection {
   background-color: var(--selection-text);
+}
+/* Not supported on Firefox */
+::-webkit-scrollbar {
+  background-color: var(--scroll-bar-background);
+}
+::-webkit-scrollbar-track {
+  margin: var(--vertical-medium-space) 0;
+  background-color: var(--scroll-bar-background);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2rem;
+  background-color: var(--scroll-bar-thumb);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scroll-bar-thumb-hover);
 }
 
 /* CONTAINER */
@@ -130,7 +154,7 @@ nav {
   color: var(--text);
   text-decoration: none;
 
-  transition: width 200ms;
+  transition: 200ms;
 }
 .nav-link:hover {
   color: var(--side-text);
