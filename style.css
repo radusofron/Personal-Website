@@ -98,7 +98,8 @@ h3::selection,
 li::selection,
 p::selection,
 a::selection,
-img::selection {
+img::selection,
+button::selection {
   background-color: var(--selection-text);
 }
 /* Not supported on Firefox */
@@ -137,6 +138,7 @@ img::selection {
 /* HEADER */
 header {
   position: sticky;
+  z-index: 1;
   top: 0;
   padding: var(--vertical-medium-space) 0;
   background-color: var(--header-bg);
@@ -199,7 +201,7 @@ label.theme-switcher {
   transition: transform 200ms;
 }
 label.theme-switcher:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 img#sun {
   display: block;
@@ -259,7 +261,7 @@ article.home ul.contact-options li.contact-option a {
   transition: transform 200ms;
 }
 article.home ul.contact-options li.contact-option a:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 /* ABOUT ME SECTION */
@@ -281,7 +283,7 @@ article.about section.education .icon-container {
   margin-top: var(--vertical-normal-space);
   background-color: var(--purple);
 }
-article.about h3 {
+article.about h2 {
   font-size: var(--fs-subtitle);
   font-weight: var(--fw-medium);
   color: var(--text);
@@ -344,7 +346,7 @@ article.skills section.others .icon-container {
   margin-top: var(--vertical-normal-space);
   background-color: var(--red);
 }
-article.skills h3 {
+article.skills h2 {
   font-size: var(--fs-subtitle);
   font-weight: var(--fw-medium);
   color: var(--text);
@@ -380,7 +382,7 @@ article.projects .icon-container {
   display: grid;
   place-content: center;
 }
-article.projects h3 {
+article.projects h2 {
   font-size: var(--fs-subtitle);
   font-weight: var(--fw-medium);
   color: var(--text);
@@ -420,11 +422,29 @@ article.projects .grid {
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 283px 283px;
+  grid-template-rows: repeat(2, 329px);
   column-gap: var(--horizontal-space);
   row-gap: var(--vertical-large-space);
 }
 article.projects .grid .project {
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--vertical-small-space);
+
+  transition: transform 200ms;
+}
+article.projects .grid .project:hover {
+  transform: scale(1.05);
+}
+article.projects .grid .project.hidden {
+  display: none;
+}
+article.projects .grid .project .logo-container {
+  flex-basis: 100%;
+  position: relative;
+
   border: 10px solid var(--container-border);
   border-radius: 2rem;
 
@@ -432,4 +452,22 @@ article.projects .grid .project {
 
   display: grid;
   place-content: center;
+
+  overflow: hidden;
 }
+article.projects .grid .project h3 {
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-regular);
+  color: var(--text);
+}
+
+/* article.projects .grid .project .name-and-button button {
+  padding: var(--vertical-button-padding) var(--horizontal-button-padding);
+  border-radius: 5rem;
+
+  font-size: var(--fs-button);
+  font-weight: var(--fw-medium);
+
+  color: var(--text);
+  background-color: var(--body-bg);
+} */

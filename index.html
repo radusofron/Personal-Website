@@ -94,7 +94,7 @@
                 <div class="icon-container">
                     <img src="./assets/icons/summary.svg" alt="">
                 </div>
-                <h3>Summary</h3>
+                <h2>Summary</h2>
                 <div class="paragraphs">
                     <p class="summary">
                         A recent Computer Science graduate, I am an ambitious and sociable person, eager to build a
@@ -115,7 +115,7 @@
                 <div class="icon-container">
                     <img src="./assets/icons/education.svg" alt="">
                 </div>
-                <h3>Education</h3>
+                <h2>Education</h2>
                 <div class="paragraphs">
                     <div class="uni">
                         <p class="institution">
@@ -147,7 +147,7 @@
                     <div class="icon-container">
                         <img src="./assets/icons/front-end.svg" alt="">
                     </div>
-                    <h3>Front-End Development</h3>
+                    <h2>Front-End Development</h2>
                     <ul>
                         <li>HTML</li>
                         <li>CSS</li>
@@ -165,7 +165,7 @@
                     <div class="icon-container">
                         <img src="./assets/icons/back-end.svg" alt="">
                     </div>
-                    <h3>Back-End Development</h3>
+                    <h2>Back-End Development</h2>
                     <ul>
                         <li>Python</li>
                         <li>Flask</li>
@@ -180,7 +180,7 @@
                 <div class="icon-container">
                     <img src="./assets/icons/others.svg" alt="">
                 </div>
-                <h3>Others</h3>
+                <h2>Others</h2>
                 <ul>
                     <li>Algorithm Design</li>
                     <li>Machine Learning</li>
@@ -197,33 +197,51 @@
             <div class="icon-container">
                 <img src="./assets/icons/filter.svg" alt="">
             </div>
-            <h3>Filter projects</h3>
+            <h2>Filter projects</h2>
             <div class="filters-row">
-                <button class="filter active" project-filter="all">All</button>
-                <button class="filter" project-filter="front-end">Front-End</button>
-                <button class="filter" project-filter="back-end">Back-End</button>
-                <button class="filter" project-filter="python">Python</button>
+                <button class="filter active" id="all">All</button>
+                <button class="filter" id="front-end">Front-End</button>
+                <button class="filter" id="back-end">Back-End</button>
+                <button class="filter" id="python">Python</button>
             </div>
 
             <div class="grid">
-                <div class="project">
-                    <img src="./assets/illustrations/toyo.svg" alt="Project logo">
-                </div>
-                <div class="project">
-                    <img src="./assets/illustrations/personal-website.svg" alt="Project logo">
-                </div>
-                <div class="project">
-                    <img src="./assets/illustrations/fep.svg" alt="Project logo">
-                </div>
-                <div class="project">
-                    <img src="./assets/illustrations/ttt.svg" alt="Project logo">
-                </div>
-                <div class="project">
-                    <img src="./assets/illustrations/wc.svg" alt="Project logo">
-                </div>
-                <div class="project">
-                    <img src="./assets/illustrations/pem.svg" alt="Project logo">
-                </div>
+                <a href="" class="project" project-category="all front-end back-end python">
+                    <div class="logo-container">
+                        <img src="./assets/illustrations/toyo.svg" alt="Project logo">
+                    </div>
+                    <h3>Toyo Travel Companion</h3>
+                </a>
+                <a href="" class="project" project-category="all front-end">
+                    <div class="logo-container">
+                        <img src="./assets/illustrations/personal-website.svg" alt="Project logo">
+                    </div>
+                    <h3>My Personal Website</h3>
+                </a>
+                <a href="" class="project" project-category="all front-end">
+                    <div class="logo-container">
+                        <img src="./assets/illustrations/fep.svg" alt="Project logo">
+                    </div>
+                    <h3>Front-End Projects</h3>
+                </a>
+                <a href="" class="project" project-category="all python">
+                    <div class="logo-container">
+                        <img src="./assets/illustrations/ttt.svg" alt="Project logo">
+                    </div>
+                    <h3>Tic Tac Toe</h3>
+                </a>
+                <a href="" class="project" project-category="all python">
+                    <div class="logo-container">
+                        <img src="./assets/illustrations/wc.svg" alt="Project logo">
+                    </div>
+                    <h3>Wikipedia Crawler</h3>
+                </a>
+                <a href="" class="project" project-category="all front-end back-end">
+                    <div class="logo-container">
+                        <img src="./assets/illustrations/pem.svg" alt="Project logo">
+                    </div>
+                    <h3>Pet Smart Manager</h3>
+                </a>
             </div>
         </article>
 

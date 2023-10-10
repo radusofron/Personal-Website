@@ -56,5 +56,46 @@ function detectViewportArticle() {
   });
 }
 
+function filterProjects() {
+  // Extract buttons
+  const filterButtons = document.querySelectorAll(".filter");
+  // Extract projects
+  const projects = document.querySelectorAll(".project");
+
+  // Save current filter
+  let currentFilter = "all";
+
+  //
+  filterButtons.forEach((filterButton) => {
+    //
+    filterButton.addEventListener("click", function () {
+      //
+      if (!filterButton.classList.contains("active")) {
+        document.querySelector(".filter.active").classList.remove("active");
+        filterButton.classList.add("active");
+        currentFilter = filterButton.id;
+      }
+      //
+      projects.forEach((project) => {
+        // Project part of filter
+        if (project.getAttribute("project-category").includes(currentFilter)) {
+          // Project is hidden
+          if (project.classList.contains("hidden")) {
+            project.classList.remove("hidden");
+          }
+        }
+        // Project not part of filter
+        else {
+          // Project is visible
+          if (!project.classList.contains("hidden")) {
+            project.classList.add("hidden");
+          }
+        }
+      });
+    });
+  });
+}
+
 changeTheme();
 detectViewportArticle();
+filterProjects();
