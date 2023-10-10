@@ -25,11 +25,13 @@
 
   /* DIMENSTION */
   --horizontal-space: 5vw;
-  --vertical-big-space: 6rem;
+  --vertical-extra-large-space: 8rem;
+  --vertical-large-space: 4rem;
   --vertical-medium-space: 3rem;
   --vertical-normal-space: 2rem;
   --vertical-small-space: 1rem;
-  --vertical-smallest-space: 0.5rem;
+  --vertical-button-padding: 0.5rem;
+  --horizontal-button-padding: 1.5rem;
 }
 
 * {
@@ -126,7 +128,7 @@ img::selection {
   background-color: var(--container-bg);
 }
 .container > article {
-  padding-bottom: var(--vertical-big-space);
+  padding-bottom: var(--vertical-extra-large-space);
 }
 .container article:last-child {
   padding-bottom: 0;
@@ -154,7 +156,7 @@ nav {
   color: var(--text);
   text-decoration: none;
 
-  transition: 200ms;
+  transition: color 200ms;
 }
 .nav-link:hover {
   color: var(--side-text);
@@ -189,11 +191,11 @@ label.theme-switcher {
   width: 54px;
 
   background-color: var(--icon-bg);
-  cursor: pointer;
 
   display: grid;
   place-content: center;
 
+  cursor: pointer;
   transition: transform 200ms;
 }
 label.theme-switcher:hover {
@@ -262,7 +264,7 @@ article.home ul.contact-options li.contact-option a:hover {
 
 /* ABOUT ME SECTION */
 article.about section .icon-container {
-  margin: var(--vertical-normal-space) 0;
+  margin-bottom: var(--vertical-normal-space);
   margin-inline: auto;
   border-radius: 5rem;
 
@@ -276,6 +278,7 @@ article.about section.summary .icon-container {
   background-color: var(--green);
 }
 article.about section.education .icon-container {
+  margin-top: var(--vertical-normal-space);
   background-color: var(--purple);
 }
 article.about h3 {
@@ -312,6 +315,7 @@ article.about section .paragraphs .date {
 article.skills .grid {
   display: grid;
   grid-template-columns: 1fr 0.5rem 1fr;
+  column-gap: var(--horizontal-space);
 }
 article.skills .design-line {
   margin-top: var(--vertical-normal-space);
@@ -320,7 +324,7 @@ article.skills .design-line {
   background-color: var(--design-line);
 }
 article.skills section .icon-container {
-  margin: var(--vertical-normal-space) 0;
+  margin-bottom: var(--vertical-normal-space);
   margin-inline: auto;
   border-radius: 5rem;
 
@@ -337,6 +341,7 @@ article.skills section.back-end .icon-container {
   background-color: var(--purple);
 }
 article.skills section.others .icon-container {
+  margin-top: var(--vertical-normal-space);
   background-color: var(--red);
 }
 article.skills h3 {
@@ -352,16 +357,79 @@ article.skills section.others ul {
   padding-bottom: 0;
 }
 article.skills ul li {
-  padding: var(--vertical-smallest-space) 0;
+  padding-bottom: var(--vertical-small-space);
   font-size: var(--fs-paragraph);
   font-weight: var(--fw-regular);
   color: var(--text);
-}
-article.skills ul li:first-child {
-  padding: 0;
 }
 article.skills ul li:last-child {
   padding: 0;
 }
 
 /* PROJECTS SECTION */
+article.projects .icon-container {
+  margin-bottom: var(--vertical-normal-space);
+  margin-inline: auto;
+  border-radius: 5rem;
+
+  width: 82px;
+  height: 82px;
+
+  background-color: var(--green);
+
+  display: grid;
+  place-content: center;
+}
+article.projects h3 {
+  font-size: var(--fs-subtitle);
+  font-weight: var(--fw-medium);
+  color: var(--text);
+}
+article.projects .filters-row {
+  margin: var(--vertical-normal-space) 0;
+  display: flex;
+  justify-content: center;
+  gap: var(--horizontal-space);
+}
+article.projects .filters-row button.filter {
+  padding: var(--vertical-button-padding) var(--horizontal-button-padding);
+  border-radius: 5rem;
+
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-medium);
+
+  color: var(--text);
+  background: none;
+
+  cursor: pointer;
+  transition: background 200ms, color 200ms;
+}
+article.projects .filters-row button.filter:hover {
+  color: var(--side-text);
+}
+article.projects .filters-row button.filter.active {
+  color: var(--white);
+  background: var(--purple);
+}
+article.projects .filters-row button.filter.active:hover {
+  color: var(--white);
+  background: var(--purple);
+}
+article.projects .grid {
+  padding-top: var(--vertical-normal-space);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 283px 283px;
+  column-gap: var(--horizontal-space);
+  row-gap: var(--vertical-large-space);
+}
+article.projects .grid .project {
+  border: 10px solid var(--container-border);
+  border-radius: 2rem;
+
+  background-color: var(--body-bg);
+
+  display: grid;
+  place-content: center;
+}

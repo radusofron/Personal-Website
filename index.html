@@ -42,8 +42,8 @@
                 <a href="index.html#projects" class="nav-link">Projects</a>
             </nav>
             <label for="theme-checkbox" class="theme-switcher">
-                <img src="./assets/icons/sun.svg" id="sun">
-                <img src="./assets/icons/moon.svg" id="moon">
+                <img src="./assets/icons/sun.svg" id="sun" alt="Light">
+                <img src="./assets/icons/moon.svg" id="moon" alt="Dark">
                 <!-- Script runs after sun and moon images are rendered -->
                 <script>
                     // Extract theme icons
@@ -65,22 +65,22 @@
                 <h1 class="consolas-font">Hello world!</h1>
                 <h2 class="consolas-font">I'm Radu.</h2>
             </div>
-            <img class="hiro-illustration" src="./assets/illustrations/home-illustration.svg">
+            <img class="hiro-illustration" src="./assets/illustrations/home-illustration.svg" alt="">
             <p>I am a recent Computer Science graduate, eager to build a carrer in IT.</p>
             <ul class="contact-options">
                 <li class="contact-option">
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=radu.sofron169@gmail.com" target="_blank">
-                        <img src="./assets/icons/mail.svg">
+                        <img src="./assets/icons/mail.svg" alt="Mail">
                     </a>
                 </li>
                 <li class="contact-option">
                     <a href="https://www.linkedin.com/in/radu-sofron-277195223" target="_blank">
-                        <img src="./assets/icons/linkedin.svg">
+                        <img src="./assets/icons/linkedin.svg" alt="LinkedIn">
                     </a>
                 </li>
                 <li class="contact-option">
                     <a href="https://github.com/radusofron" target="_blank">
-                        <img src="./assets/icons/github.svg">
+                        <img src="./assets/icons/github.svg" alt="GitHub">
                     </a>
                 </li>
             </ul>
@@ -92,7 +92,7 @@
         <article class="about">
             <section class="summary">
                 <div class="icon-container">
-                    <img src="./assets/icons/summary.svg">
+                    <img src="./assets/icons/summary.svg" alt="">
                 </div>
                 <h3>Summary</h3>
                 <div class="paragraphs">
@@ -113,7 +113,7 @@
 
             <section class="education">
                 <div class="icon-container">
-                    <img src="./assets/icons/education.svg">
+                    <img src="./assets/icons/education.svg" alt="">
                 </div>
                 <h3>Education</h3>
                 <div class="paragraphs">
@@ -145,7 +145,7 @@
             <div class="grid">
                 <section class="front-end">
                     <div class="icon-container">
-                        <img src="./assets/icons/front-end.svg">
+                        <img src="./assets/icons/front-end.svg" alt="">
                     </div>
                     <h3>Front-End Development</h3>
                     <ul>
@@ -163,7 +163,7 @@
 
                 <section class="back-end">
                     <div class="icon-container">
-                        <img src="./assets/icons/back-end.svg">
+                        <img src="./assets/icons/back-end.svg" alt="">
                     </div>
                     <h3>Back-End Development</h3>
                     <ul>
@@ -178,7 +178,7 @@
 
             <section class="others">
                 <div class="icon-container">
-                    <img src="./assets/icons/more.svg">
+                    <img src="./assets/icons/others.svg" alt="">
                 </div>
                 <h3>Others</h3>
                 <ul>
@@ -193,14 +193,38 @@
         </article>
 
         <article class="projects">
-            <div class="project">
 
+            <div class="icon-container">
+                <img src="./assets/icons/filter.svg" alt="">
             </div>
-            <div class="project"></div>
-            <div class="project"></div>
-            <div class="project"></div>
-            <div class="project"></div>
-            <div class="project"></div>
+            <h3>Filter projects</h3>
+            <div class="filters-row">
+                <button class="filter active" project-filter="all">All</button>
+                <button class="filter" project-filter="front-end">Front-End</button>
+                <button class="filter" project-filter="back-end">Back-End</button>
+                <button class="filter" project-filter="python">Python</button>
+            </div>
+
+            <div class="grid">
+                <div class="project">
+                    <img src="./assets/illustrations/toyo.svg" alt="Project logo">
+                </div>
+                <div class="project">
+                    <img src="./assets/illustrations/personal-website.svg" alt="Project logo">
+                </div>
+                <div class="project">
+                    <img src="./assets/illustrations/fep.svg" alt="Project logo">
+                </div>
+                <div class="project">
+                    <img src="./assets/illustrations/ttt.svg" alt="Project logo">
+                </div>
+                <div class="project">
+                    <img src="./assets/illustrations/wc.svg" alt="Project logo">
+                </div>
+                <div class="project">
+                    <img src="./assets/illustrations/pem.svg" alt="Project logo">
+                </div>
+            </div>
         </article>
 
     </div>
