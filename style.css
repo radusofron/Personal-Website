@@ -433,6 +433,7 @@ article.projects .grid .project {
   flex-direction: column;
   gap: var(--vertical-small-space);
 
+  cursor: pointer;
   transition: transform 200ms;
 }
 article.projects .grid .project:hover {
