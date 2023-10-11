@@ -166,8 +166,8 @@ function modalsController() {
     ],
     ["HTML", "CSS", "JavaScript", "Responsive Design", "Web Design", "Figma"],
     ["HTML", "CSS", "JavaScript", "Responsive Design"],
-    ["Python"],
     ["Python", "Algorithm Design"],
+    ["Python"],
     ["HTML", "CSS", "JavaScript", "Responsive Design", "PHP", "SQL databases"],
   ];
   const projectDates = [

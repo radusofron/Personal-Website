@@ -89,6 +89,7 @@ body.inactive {
 }
 /* GENERAL */
 article {
+  padding: 0 var(--big-horizontal-space);
   text-align: center;
 }
 .consolas-font {
@@ -124,11 +125,12 @@ button::selection {
 /* CONTAINER */
 .container {
   position: relative;
+
   margin: 3rem var(--big-horizontal-space);
-  padding: 0rem var(--big-horizontal-space) var(--vertical-medium-space)
-    var(--big-horizontal-space);
+  padding-bottom: var(--big-horizontal-space);
   border: 0.5rem solid var(--container-border);
   border-radius: 3rem;
+
   background-color: var(--container-bg);
 }
 .container > article {
@@ -143,7 +145,10 @@ header {
   position: sticky;
   z-index: 1;
   top: 0;
-  padding: var(--vertical-medium-space) 0;
+
+  padding: var(--vertical-medium-space) var(--big-horizontal-space);
+  border-radius: 3rem;
+
   background-color: var(--header-bg);
   text-align: center;
 }
@@ -189,7 +194,7 @@ nav {
 label.theme-switcher {
   position: absolute;
   top: calc(3rem - 12px);
-  right: 0rem;
+  right: var(--big-horizontal-space);
   border-radius: 2rem;
 
   height: 54px;
