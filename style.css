@@ -23,7 +23,8 @@
   --fw-bold: 700;
 
   /* DIMENSTION */
-  --horizontal-space: 5vw;
+  --big-horizontal-space: 5vw;
+  --small-horizontal-space: 2.5vw;
   --vertical-extra-large-space: 8rem;
   --vertical-large-space: 4rem;
   --vertical-medium-space: 3rem;
@@ -123,9 +124,9 @@ button::selection {
 /* CONTAINER */
 .container {
   position: relative;
-  margin: 3rem var(--horizontal-space);
-  padding: 0rem var(--horizontal-space) var(--vertical-medium-space)
-    var(--horizontal-space);
+  margin: 3rem var(--big-horizontal-space);
+  padding: 0rem var(--big-horizontal-space) var(--vertical-medium-space)
+    var(--big-horizontal-space);
   border: 0.5rem solid var(--container-border);
   border-radius: 3rem;
   background-color: var(--container-bg);
@@ -149,7 +150,7 @@ header {
 nav {
   display: flex;
   justify-content: center;
-  gap: var(--horizontal-space);
+  gap: var(--big-horizontal-space);
 }
 .nav-link {
   position: relative;
@@ -252,7 +253,7 @@ article.home ul.contact-options {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: var(--horizontal-space);
+  gap: var(--big-horizontal-space);
 }
 article.home ul.contact-options li.contact-option a {
   display: block;
@@ -319,7 +320,7 @@ article.about section .paragraphs .date {
 article.skills .grid {
   display: grid;
   grid-template-columns: 1fr 0.5rem 1fr;
-  column-gap: var(--horizontal-space);
+  column-gap: var(--big-horizontal-space);
 }
 article.skills .design-line {
   margin-top: var(--vertical-normal-space);
@@ -393,7 +394,7 @@ article.projects .filters-row {
   margin: var(--vertical-normal-space) 0;
   display: flex;
   justify-content: center;
-  gap: var(--horizontal-space);
+  gap: var(--big-horizontal-space);
 }
 article.projects .filters-row button.filter {
   padding: var(--vertical-button-padding) var(--horizontal-button-padding);
@@ -425,7 +426,7 @@ article.projects .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 329px);
-  column-gap: var(--horizontal-space);
+  column-gap: var(--big-horizontal-space);
   row-gap: var(--vertical-large-space);
 }
 article.projects .grid .project {
@@ -486,8 +487,8 @@ article.projects .grid .project h3 {
 .modal-container .modal {
   position: relative;
 
-  margin: 3rem var(--horizontal-space);
-  padding: var(--vertical-medium-space) var(--horizontal-space);
+  margin: 3rem var(--big-horizontal-space);
+  padding: var(--vertical-medium-space) var(--big-horizontal-space);
   border: 0.5rem solid var(--container-border);
   border-radius: 3rem;
 
@@ -516,9 +517,75 @@ article.projects .grid .project h3 {
 .modal-container .modal .close-button-container:hover {
   transform: scale(1.2);
 }
+.modal-container .modal .logo-container {
+  height: 150px;
+  vertical-align: center;
+}
 .modal-container .modal h3 {
-  margin-top: var(--vertical-normal-space);
-  margin-bottom: var(--vertical-small-space);
+  margin-top: var(--vertical-large-space);
+  margin-bottom: var(--vertical-normal-space);
   font-size: var(--fs-subtitle);
   font-weight: var(--fw-medium);
+  color: var(--text);
+}
+.modal-container .modal h3:first-of-type {
+  margin-top: var(--vertical-medium-space);
+}
+.modal-container .modal .description {
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-regular);
+  color: var(--text);
+}
+.modal-container .modal ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--small-horizontal-space);
+}
+.modal-container .modal ul li {
+  padding: var(--vertical-button-padding) var(--horizontal-button-padding);
+  border-radius: 5rem;
+
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-regular);
+  text-wrap: nowrap;
+
+  color: var(--text);
+  background-color: var(--body-bg);
+}
+.modal-container .modal .date {
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-regular);
+  color: var(--side-text);
+}
+.modal-container .modal .project-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--small-horizontal-space);
+}
+.modal-container .modal .project-links a {
+  padding: var(--vertical-button-padding) var(--horizontal-button-padding);
+  border-radius: 5rem;
+
+  text-decoration: none;
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-medium);
+  color: var(--white);
+
+  display: flex;
+  align-items: center;
+  gap: 0.75vw;
+
+  cursor: pointer;
+  transition: transform 200ms;
+}
+.modal-container .modal .project-links a:hover {
+  transform: scale(1.125);
+}
+.modal-container .modal .project-links a.demo {
+  background: linear-gradient(to right, var(--red), var(--purple));
+}
+.modal-container .modal .project-links a.github {
+  background: linear-gradient(to right, var(--purple), var(--green));
 }

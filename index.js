@@ -1,4 +1,4 @@
-// Function to save favourite theme
+/* Function to save favourite theme */
 function saveFavouriteTheme() {
   if (localStorage.getItem("darkMode") === "true") {
     localStorage.setItem("darkMode", "false");
@@ -7,7 +7,7 @@ function saveFavouriteTheme() {
   }
 }
 
-// Function to change website theme
+/* Function to change website theme */
 function changeTheme() {
   // Extract theme button
   const themeButton = document.getElementById("theme-checkbox");
@@ -23,7 +23,7 @@ function changeTheme() {
   });
 }
 
-// Function to detect article on viewport
+/* Function to detect article on viewport */
 function detectViewportArticle() {
   // Extract nav links
   const navLinks = document.querySelectorAll(".nav-link");
@@ -56,6 +56,7 @@ function detectViewportArticle() {
   });
 }
 
+/* Function to filter projects */
 function filterProjects() {
   // Extract buttons
   const filterButtons = document.querySelectorAll(".filter");
@@ -96,26 +97,115 @@ function filterProjects() {
   });
 }
 
+/* Function to add the image of the project */
+function addImage(projectImages, index, imageElement) {
+  newSrc = "./assets/illustrations/" + projectImages[index] + ".svg";
+  imageElement.setAttribute("src", newSrc);
+}
+
+/* Function to add the skills of the project */
+function addSkills(projectSkills, index, skillsList) {
+  // Compute number of skills for this project
+  const numberOfSkills = projectSkills[index].length;
+
+  // Loop to remove previous items
+  while (skillsList.firstChild) {
+    skillsList.removeChild(skillsList.firstChild);
+  }
+  // Add items
+  for (let indexTwo = 0; indexTwo < numberOfSkills; indexTwo++) {
+    let listItem = document.createElement("li");
+    listItem.textContent = projectSkills[index][indexTwo];
+    skillsList.appendChild(listItem);
+  }
+}
+
+/* Function to show / hide and populate project modal */
 function modalsController() {
   // Extract projects => open modals buttons
   const projects = document.querySelectorAll(".project");
   // Extract modals
-  const modals = document.querySelectorAll(".modal-container");
+  const modal = document.querySelector(".modal-container");
   // Extract close modals buttons
-  const closeButtons = document.querySelectorAll(".close-button-container");
-  //
+  const closeButton = document.querySelector(".close-button-container");
+  // Compute number of projects
   const numberOfProjects = projects.length;
 
-  //
+  /* Projects content */
+  const projectImages = [
+    "toyo",
+    "personal-website",
+    "front-end-projects",
+    "ttt",
+    "wc",
+    "pem",
+  ];
+  const projectNames = [
+    "Toyo Travel Companion",
+    "Personal Website",
+    "Front-End Projects",
+    "Tic Tac Toe",
+    "Wikipedia Crawler",
+    "Pet Smart Manager",
+  ];
+  const projectDescriptions = ["lorem", "b", "c", "d", "e", "f"];
+  const projectSkills = [
+    [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "APIs",
+      "Responsive Design",
+      "Web Design",
+      "Figma",
+      "Python",
+      "Flask",
+      "SQL databases",
+      "Algorithm Design",
+      "Machine Learning",
+    ],
+    ["HTML", "CSS", "JavaScript", "Responsive Design", "Web Design", "Figma"],
+    ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    ["Python"],
+    ["Python", "Algorithm Design"],
+    ["HTML", "CSS", "JavaScript", "Responsive Design", "PHP", "SQL databases"],
+  ];
+  const projectDates = [
+    "February 2023 - June 2023",
+    "October 2023",
+    "August 2023 - Present",
+    "November 2022 - December 2022",
+    "December 2022 - January 2023",
+    "March 2022 - June 2022",
+  ];
+
+  // Extract modal elements
+  const imageElement = document.getElementById("modal-image");
+  const nameElement = document.getElementById("modal-name");
+  const descriptionElement = document.getElementById("modal-description");
+  const skillsList = document.getElementById("modal-skills");
+  const dateElement = document.getElementById("modal-date");
+
+  // Detect which project was clicked, display modal, populate it, and hide it when button is clicked
   for (let index = 0; index < numberOfProjects; index++) {
-    //
     projects[index].addEventListener("click", function () {
-      modals[index].classList.add("active");
+      // Populate project
+      addImage(projectImages, index, imageElement);
+      nameElement.textContent = projectNames[index];
+      descriptionElement.textContent = projectDescriptions[index];
+      addSkills(projectSkills, index, skillsList);
+      dateElement.textContent = projectDates[index];
+
+      // Show modal
+      modal.classList.add("active");
+      // Hide body scrollbar
       body.classList.add("inactive");
     });
     //
-    closeButtons[index].addEventListener("click", function () {
-      modals[index].classList.remove("active");
+    closeButton.addEventListener("click", function () {
+      // Hide modal
+      modal.classList.remove("active");
+      // Show body scrollbar
       body.classList.remove("inactive");
     });
   }
