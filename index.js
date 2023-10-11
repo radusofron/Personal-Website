@@ -96,6 +96,32 @@ function filterProjects() {
   });
 }
 
+function modalsController() {
+  // Extract projects => open modals buttons
+  const projects = document.querySelectorAll(".project");
+  // Extract modals
+  const modals = document.querySelectorAll(".modal-container");
+  // Extract close modals buttons
+  const closeButtons = document.querySelectorAll(".close-button-container");
+  //
+  const numberOfProjects = projects.length;
+
+  //
+  for (let index = 0; index < numberOfProjects; index++) {
+    //
+    projects[index].addEventListener("click", function () {
+      modals[index].classList.add("active");
+      body.classList.add("inactive");
+    });
+    //
+    closeButtons[index].addEventListener("click", function () {
+      modals[index].classList.remove("active");
+      body.classList.remove("inactive");
+    });
+  }
+}
+
 changeTheme();
 detectViewportArticle();
 filterProjects();
+modalsController();
