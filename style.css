@@ -61,6 +61,7 @@ body {
   --scroll-bar-background: #e8e8f7;
   --scroll-bar-thumb: rgb(50, 52, 50, 0.25);
   --scroll-bar-thumb-hover: rgb(50, 52, 50, 0.5);
+  --horizontal-scroll-bar-thumb: #e8e8f7;
 
   background-color: var(--body-bg);
 }
@@ -81,6 +82,7 @@ body.dark {
   --scroll-bar-background: #1a0e43;
   --scroll-bar-thumb: rgb(253, 255, 252, 0.15);
   --scroll-bar-thumb-hover: #261a4d;
+  --horizontal-scroll-bar-thumb: #1a0e43;
 }
 
 body.inactive {
@@ -126,7 +128,7 @@ button::selection {
 .container {
   position: relative;
 
-  margin: 3rem var(--big-horizontal-space);
+  margin: var(--vertical-medium-space) var(--big-horizontal-space);
   padding-bottom: var(--big-horizontal-space);
   border: 0.5rem solid var(--container-border);
   border-radius: 3rem;
@@ -147,15 +149,21 @@ header {
   top: 0;
 
   padding: var(--vertical-medium-space) var(--big-horizontal-space);
-  border-radius: 3rem;
+  border-radius: 3rem 3rem 0rem 0rem;
 
   background-color: var(--header-bg);
   text-align: center;
 }
-nav {
+header .hamburger-container {
+  display: none;
+}
+nav.desktop-nav {
   display: flex;
   justify-content: center;
   gap: var(--big-horizontal-space);
+}
+nav.phone-nav {
+  display: none;
 }
 .nav-link {
   position: relative;
@@ -407,6 +415,7 @@ article.projects .filters-row button.filter {
 
   font-size: var(--fs-paragraph);
   font-weight: var(--fw-medium);
+  text-wrap: nowrap;
 
   color: var(--text);
   background: none;
@@ -436,6 +445,7 @@ article.projects .grid {
 }
 article.projects .grid .project {
   text-decoration: none;
+  opacity: 1;
 
   display: flex;
   flex-direction: column;
@@ -448,7 +458,11 @@ article.projects .grid .project:hover {
   transform: scale(1.05);
 }
 article.projects .grid .project.hidden {
-  display: none;
+  cursor: default;
+  opacity: 0.25;
+}
+article.projects .grid .project.hidden:hover {
+  transform: scale(1);
 }
 article.projects .grid .project .logo-container {
   flex-basis: 100%;
@@ -596,6 +610,7 @@ article.projects .grid .project h3 {
 }
 
 /* RESPONSIVE */
+/* Laptop */
 @media (max-width: 1200px) {
   :root {
     /* FONT SIZE */
@@ -667,7 +682,7 @@ article.projects .grid .project h3 {
     height: 38px;
   }
   article.projects .grid {
-    grid-template-rows: repeat(2, 304px);
+    grid-template-rows: repeat(2, 247px);
   }
   article.projects .grid .project .logo-container img {
     height: 112px;
@@ -687,5 +702,88 @@ article.projects .grid .project h3 {
   .modal-container .modal .close-button-container img {
     height: 21px;
     width: 21px;
+  }
+}
+@media (max-width: 1024px) {
+  article.projects .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 247px);
+  }
+}
+/* Tablet */
+@media (max-width: 800px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .hamburger-container {
+    border-radius: 2rem;
+
+    height: 45px;
+    width: 45px;
+
+    background-color: var(--icon-bg);
+
+    display: grid;
+    place-content: center;
+
+    cursor: pointer;
+    transition: transform 200ms;
+  }
+  header .hamburger-container:hover {
+    transform: scale(1.2);
+  }
+  header .hamburger-container img {
+    height: 29px;
+    width: 29px;
+  }
+  header nav.desktop-nav {
+    display: none;
+  }
+  label.theme-switcher {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  article.home ul.contact-options {
+    justify-content: space-evenly;
+    gap: 0;
+  }
+  article.projects .filters-row {
+    overflow-x: scroll;
+    padding-bottom: var(--vertical-normal-space);
+    justify-content: space-between;
+  }
+  article.projects .filters-row::-webkit-scrollbar {
+    border-radius: 2rem;
+    height: var(--vertical-small-space);
+    background: transparent;
+  }
+  article.projects .filters-row::-webkit-scrollbar-track {
+    border-radius: 2rem;
+    margin: var(--vertical-medium-space) 0;
+    background: transparent;
+  }
+  article.projects .filters-row::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: var(--horizontal-scroll-bar-thumb);
+  }
+}
+/* Phone */
+@media (max-width: 650px) {
+  article.skills .grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  article.projects .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 247px);
+  }
+}
+@media (max-width: 350px) {
+  article.home .hiro-illustration {
+    height: 157px;
+    width: 157px;
   }
 }
