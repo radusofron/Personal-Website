@@ -107,21 +107,24 @@ img::selection,
 button::selection {
   background-color: var(--selection-text);
 }
+/* Scroll bar styled only for larger screens */
 /* Not supported on Firefox */
-::-webkit-scrollbar {
-  width: 1rem;
-  background-color: var(--scroll-bar-background);
-}
-::-webkit-scrollbar-track {
-  margin: var(--vertical-medium-space) 0;
-  background-color: var(--scroll-bar-background);
-}
-::-webkit-scrollbar-thumb {
-  border-radius: 2rem;
-  background-color: var(--scroll-bar-thumb);
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scroll-bar-thumb-hover);
+@media (min-width: 801px) {
+  ::-webkit-scrollbar {
+    width: 1rem;
+    background-color: var(--scroll-bar-background);
+  }
+  ::-webkit-scrollbar-track {
+    margin: var(--vertical-medium-space) 0;
+    background-color: var(--scroll-bar-background);
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background-color: var(--scroll-bar-thumb);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scroll-bar-thumb-hover);
+  }
 }
 
 /* CONTAINER */
@@ -487,7 +490,7 @@ article.projects .grid .project h3 {
 /* MODAL */
 .modal-container {
   position: fixed;
-  overflow-y: scroll;
+  overflow-y: auto;
   z-index: 1;
   top: 0;
   left: 0;
@@ -520,6 +523,7 @@ article.projects .grid .project h3 {
   top: -20px;
   right: -20px;
 
+  margin-inline: auto;
   border-radius: 2rem;
 
   height: 54px;
@@ -626,7 +630,7 @@ article.projects .grid .project h3 {
 
     /* DIMENSTION */
     /*** decrease a quarter ***/
-    --vertical-extra-large-space: 6.5rem;
+    --vertical-extra-large-space: 6rem;
     --vertical-large-space: 3rem;
     --vertical-medium-space: 2.25rem;
     --vertical-normal-space: 1.5rem;
@@ -715,16 +719,23 @@ article.projects .grid .project h3 {
   body.inactive {
     padding-right: 0;
   }
+  .container {
+    margin: 0 var(--big-horizontal-space);
+    border: 0;
+    border-left: 10px solid var(--container-border);
+    border-right: 10px solid var(--container-border);
+    border-radius: 0rem;
+  }
   header {
+    border-radius: 0rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
   }
   header #hamburger-menu {
     border-radius: 2rem;
 
-    height: 45px;
-    width: 45px;
+    height: 62px;
+    width: 62px;
 
     background-color: var(--icon-bg);
 
@@ -738,8 +749,8 @@ article.projects .grid .project h3 {
     transform: scale(1.2);
   }
   header #hamburger-menu img {
-    height: 29px;
-    width: 29px;
+    height: 38px;
+    width: 38px;
   }
   header nav.desktop-nav {
     display: none;
@@ -764,14 +775,19 @@ article.projects .grid .project h3 {
     transform: translateY(0);
   }
   .phone-nav-container nav.phone-nav {
-    position: relative;
-
-    margin: var(--vertical-medium-space) var(--big-horizontal-space);
+    margin: 0 var(--big-horizontal-space);
     padding: var(--vertical-medium-space) var(--big-horizontal-space);
-    border: 0.5rem solid var(--container-border);
-    border-radius: 3rem;
+    border-left: 10px solid var(--container-border);
+    border-right: 10px solid var(--container-border);
+    border-radius: 0rem;
 
     background-color: var(--container-bg);
+
+    display: flex;
+    flex-direction: column;
+  }
+  .phone-nav-container nav.phone-nav .phone-nav-links-container {
+    flex-basis: 100%;
 
     display: flex;
     flex-direction: column;
@@ -779,14 +795,11 @@ article.projects .grid .project h3 {
     justify-content: space-evenly;
   }
   .phone-nav-container nav.phone-nav #close-menu-button {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-
+    align-self: center;
     border-radius: 2rem;
 
-    height: 45px;
-    width: 45px;
+    min-height: 62px;
+    width: 62px;
 
     background-color: var(--icon-bg);
 
@@ -800,8 +813,8 @@ article.projects .grid .project h3 {
     transform: scale(1.2);
   }
   .phone-nav-container nav.phone-nav #close-menu-button img {
-    height: 21px;
-    width: 21px;
+    height: 38px;
+    width: 38px;
   }
   .phone-nav-container nav.phone-nav .phone-nav-link {
     display: block;
@@ -817,9 +830,8 @@ article.projects .grid .project h3 {
     color: var(--side-text);
   }
   label.theme-switcher {
-    position: relative;
-    top: 0;
-    right: 0;
+    top: calc(2.25rem + 9px);
+    right: var(--big-horizontal-space);
   }
   article.home ul.contact-options {
     justify-content: space-evenly;
@@ -843,6 +855,27 @@ article.projects .grid .project h3 {
   article.projects .filters-row::-webkit-scrollbar-thumb {
     border-radius: 2rem;
     background-color: var(--horizontal-scroll-bar-thumb);
+  }
+  .modal-container .modal {
+    margin: 0 var(--big-horizontal-space);
+    border: 0;
+    border-left: 10px solid var(--container-border);
+    border-right: 10px solid var(--container-border);
+    border-radius: 0rem;
+  }
+  .modal-container .modal .close-button-container {
+    position: relative;
+    top: 0;
+    right: 0;
+
+    margin-bottom: var(--vertical-medium-space);
+
+    height: 62px;
+    width: 62px;
+  }
+  .modal-container .modal .close-button-container img {
+    height: 38px;
+    width: 38px;
   }
 }
 /* Phone */
