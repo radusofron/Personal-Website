@@ -74,17 +74,15 @@ function filterProjects() {
   // Save current filter
   let currentFilter = "all";
 
-  //
   filterButtons.forEach((filterButton) => {
-    //
+    // Style selected filter
     filterButton.addEventListener("click", function () {
-      //
       if (!filterButton.classList.contains("active")) {
         document.querySelector(".filter.active").classList.remove("active");
         filterButton.classList.add("active");
         currentFilter = filterButton.id;
       }
-      //
+      // Style projects accordingly to selected filter
       projects.forEach((project) => {
         // Project part of filter
         if (project.getAttribute("project-category").includes(currentFilter)) {
@@ -197,17 +195,20 @@ function modalsController() {
   // Detect which project was clicked, display modal, populate it, and hide it when button is clicked
   for (let index = 0; index < numberOfProjects; index++) {
     projects[index].addEventListener("click", function () {
-      // Populate project
-      addImage(projectImages, index, imageElement);
-      nameElement.textContent = projectNames[index];
-      descriptionElement.textContent = projectDescriptions[index];
-      addSkills(projectSkills, index, skillsList);
-      dateElement.textContent = projectDates[index];
+      // Only for available projects
+      if (!projects[index].classList.contains("hidden")) {
+        // Populate project
+        addImage(projectImages, index, imageElement);
+        nameElement.textContent = projectNames[index];
+        descriptionElement.textContent = projectDescriptions[index];
+        addSkills(projectSkills, index, skillsList);
+        dateElement.textContent = projectDates[index];
 
-      // Show modal
-      modal.classList.add("active");
-      // Hide body scrollbar
-      body.classList.add("inactive");
+        // Show modal
+        modal.classList.add("active");
+        // Hide body scrollbar
+        body.classList.add("inactive");
+      }
     });
     //
     closeButton.addEventListener("click", function () {
