@@ -27,19 +27,24 @@ function changeTheme() {
 function detectViewportArticle() {
   // Extract nav links
   const navLinks = document.querySelectorAll(".nav-link");
+  // Extract header
+  const headerElement = document.getElementById("header");
   // Extract article starting points
-  const articleStartingPoints = document.querySelectorAll(
-    ".article-starting-point"
-  );
+  const articles = document.querySelectorAll(".article");
 
   // Save current article on viewport
   let currentArticleId = "home";
 
   window.addEventListener("scroll", function () {
-    // Detect changes of current article on viewport
-    articleStartingPoints.forEach((articleStartingPoint) => {
-      if (window.scrollY >= articleStartingPoint.offsetTop) {
-        currentArticleId = articleStartingPoint.id;
+    // Compute header height
+    let headerHeight = headerElement.offsetHeight;
+    // Compute distance
+    let distance = window.scrollY + headerHeight;
+    // Detect changes of current article on viewport and determine starting position
+    articles.forEach((article) => {
+      if (distance >= article.offsetTop) {
+        currentArticleId = article.id;
+        article.style.cssText = `scroll-margin-top: ${headerHeight}px;`;
       }
       // Detect bottom of the webpage
       // Case: last article is not bigger enough
