@@ -132,9 +132,9 @@ function addSkills(projectSkills, index, skillsList) {
 function modalsController() {
   // Extract projects => open modals buttons
   const projects = document.querySelectorAll(".project");
-  // Extract modals
+  // Extract modal
   const modal = document.querySelector(".modal-container");
-  // Extract close modals buttons
+  // Extract close modal button
   const closeButton = document.querySelector(".close-button-container");
   // Compute number of projects
   const numberOfProjects = projects.length;
@@ -219,6 +219,35 @@ function modalsController() {
   }
 }
 
+function phoneMenuController() {
+  // Extract hamburger menu
+  const hamburgerMenu = document.getElementById("hamburger-menu");
+  // Extract phone menu container
+  const phoneMenu = document.querySelector(".phone-nav-container");
+  // Extract close menu button
+  const closeButton = document.getElementById("close-menu-button");
+  // Extract phone menu links
+  const menuLinks = document.querySelectorAll(".phone-nav-link");
+
+  // Open phone menu
+  hamburgerMenu.addEventListener("click", function () {
+    phoneMenu.classList.add("active");
+  });
+
+  // Close phone menu when close button clicked
+  closeButton.addEventListener("click", function () {
+    phoneMenu.classList.remove("active");
+  });
+
+  // Close phone menu when link clicked
+  menuLinks.forEach((menuLink) => {
+    menuLink.addEventListener("click", function () {
+      phoneMenu.classList.remove("active");
+    });
+  });
+}
+
+phoneMenuController();
 changeTheme();
 detectViewportArticle();
 filterProjects();

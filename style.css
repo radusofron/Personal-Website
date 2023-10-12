@@ -154,7 +154,7 @@ header {
   background-color: var(--header-bg);
   text-align: center;
 }
-header .hamburger-container {
+header #hamburger-menu {
   display: none;
 }
 nav.desktop-nav {
@@ -162,7 +162,7 @@ nav.desktop-nav {
   justify-content: center;
   gap: var(--big-horizontal-space);
 }
-nav.phone-nav {
+.phone-nav-container {
   display: none;
 }
 .nav-link {
@@ -506,7 +506,7 @@ article.projects .grid .project h3 {
 .modal-container .modal {
   position: relative;
 
-  margin: 3rem var(--big-horizontal-space);
+  margin: var(--vertical-medium-space) var(--big-horizontal-space);
   padding: var(--vertical-medium-space) var(--big-horizontal-space);
   border: 0.5rem solid var(--container-border);
   border-radius: 3rem;
@@ -626,7 +626,7 @@ article.projects .grid .project h3 {
 
     /* DIMENSTION */
     /*** decrease a quarter ***/
-    --vertical-extra-large-space: 6rem;
+    --vertical-extra-large-space: 6.5rem;
     --vertical-large-space: 3rem;
     --vertical-medium-space: 2.25rem;
     --vertical-normal-space: 1.5rem;
@@ -720,7 +720,7 @@ article.projects .grid .project h3 {
     justify-content: space-between;
     align-items: center;
   }
-  header .hamburger-container {
+  header #hamburger-menu {
     border-radius: 2rem;
 
     height: 45px;
@@ -734,15 +734,87 @@ article.projects .grid .project h3 {
     cursor: pointer;
     transition: transform 200ms;
   }
-  header .hamburger-container:hover {
+  header #hamburger-menu:hover {
     transform: scale(1.2);
   }
-  header .hamburger-container img {
+  header #hamburger-menu img {
     height: 29px;
     width: 29px;
   }
   header nav.desktop-nav {
     display: none;
+  }
+  .phone-nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    min-height: 100vh;
+    width: 100vw;
+
+    background-color: var(--body-bg);
+
+    display: grid;
+
+    transform: translateY(-100%);
+    transition: transform 400ms;
+  }
+  .phone-nav-container.active {
+    transform: translateY(0);
+  }
+  .phone-nav-container nav.phone-nav {
+    position: relative;
+
+    margin: var(--vertical-medium-space) var(--big-horizontal-space);
+    padding: var(--vertical-medium-space) var(--big-horizontal-space);
+    border: 0.5rem solid var(--container-border);
+    border-radius: 3rem;
+
+    background-color: var(--container-bg);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .phone-nav-container nav.phone-nav #close-menu-button {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+
+    border-radius: 2rem;
+
+    height: 45px;
+    width: 45px;
+
+    background-color: var(--icon-bg);
+
+    display: grid;
+    place-content: center;
+
+    cursor: pointer;
+    transition: transform 200ms;
+  }
+  .phone-nav-container nav.phone-nav #close-menu-button:hover {
+    transform: scale(1.2);
+  }
+  .phone-nav-container nav.phone-nav #close-menu-button img {
+    height: 21px;
+    width: 21px;
+  }
+  .phone-nav-container nav.phone-nav .phone-nav-link {
+    display: block;
+
+    text-decoration: none;
+    font-size: var(--fs-subtitle);
+    font-weight: var(--fw-medium);
+    color: var(--text);
+
+    transition: color 200ms;
+  }
+  .phone-nav-container nav.phone-nav .phone-nav-link:hover {
+    color: var(--side-text);
   }
   label.theme-switcher {
     position: relative;
