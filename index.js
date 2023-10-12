@@ -41,6 +41,14 @@ function detectViewportArticle() {
       if (window.scrollY >= articleStartingPoint.offsetTop) {
         currentArticleId = articleStartingPoint.id;
       }
+      // Detect bottom of the webpage
+      // Case: last article is not bigger enough
+      if (
+        window.innerHeight + Math.round(window.scrollY) >=
+        document.body.offsetHeight
+      ) {
+        currentArticleId = "projects";
+      }
     });
 
     // Style correspondent link

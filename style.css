@@ -452,7 +452,7 @@ article.projects .grid .project {
   gap: var(--vertical-small-space);
 
   cursor: pointer;
-  transition: transform 200ms;
+  transition: transform 200ms, opacity 200ms;
 }
 article.projects .grid .project:hover {
   transform: scale(1.05);
@@ -712,6 +712,9 @@ article.projects .grid .project h3 {
 }
 /* Tablet */
 @media (max-width: 800px) {
+  body.inactive {
+    padding-right: 0;
+  }
   header {
     display: flex;
     justify-content: space-between;
@@ -785,5 +788,12 @@ article.projects .grid .project h3 {
   article.home .hiro-illustration {
     height: 157px;
     width: 157px;
+  }
+  .modal-container .modal .project-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--vertical-small-space);
   }
 }
