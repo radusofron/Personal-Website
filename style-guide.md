@@ -1,17 +1,5 @@
 # Front-End Style Guide
 
-## Colors
-
-### Primary
-
-### Neutral
-
-### Light Mode Colors
-
-### Dark Mode Colors
-
-### Gradients
-
 ## Typography
 
 ### Font Family
@@ -28,9 +16,12 @@
 - Subtitle: 1.875rem (30px)
 - Paragraph: 1.25rem (20px)
 
-#### Desktop
+#### Small Screen
 
-#### Mobile
+- Big Title: 2.5rem (40px)
+- Title: 2rem (32px)
+- Subtitle 1.5rem (24px)
+- Paragaph: 1rem (16px)
 
 ### Font Weight
 

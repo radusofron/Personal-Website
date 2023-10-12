@@ -131,6 +131,36 @@ function addSkills(projectSkills, index, skillsList) {
   }
 }
 
+/* Function to add links of the project */
+function addLinks(projectLinks, index, linksElements) {
+  demoHref = projectLinks[index][0];
+  githubHref = projectLinks[index][1];
+  // Demo
+  if (demoHref === "false") {
+    if (!linksElements[0].classList.contains("inactive")) {
+      linksElements[0].classList.add("inactive");
+      linksElements[0].removeAttribute("href");
+    }
+  } else {
+    if (linksElements[0].classList.contains("inactive")) {
+      linksElements[0].classList.remove("inactive");
+    }
+    linksElements[0].setAttribute("href", demoHref);
+  }
+  // GitHub
+  if (githubHref === "false") {
+    if (!linksElements[1].classList.contains("inactive")) {
+      linksElements[1].classList.add("inactive");
+      linksElements[1].removeAttribute("href");
+    }
+  } else {
+    if (linksElements[1].classList.contains("inactive")) {
+      linksElements[1].classList.remove("inactive");
+    }
+    linksElements[1].setAttribute("href", githubHref);
+  }
+}
+
 /* Function to show / hide and populate project modal */
 function modalsController() {
   // Extract projects => open modals buttons
@@ -159,7 +189,14 @@ function modalsController() {
     "Wikipedia Crawler",
     "Pet Smart Manager",
   ];
-  const projectDescriptions = ["lorem", "b", "c", "d", "e", "f"];
+  const projectDescriptions = [
+    "<p>Toyo Travel Companion represents my bachelor's degree project. It is an interactive web application created to help tourists organize their city trips efficiently. </p> <p> The available options regarding a city are to generate travel itineraries based on the preferences of the user, such as the number of days to be spent, and tourist attractions to be visited, to read the description from Wikipedia, to view relevant photos from Unsplash, to examine some statistics (derived from the evaluations of the users), to see the reviews written by other users (contains a sorting system), to find the latest news, and to check the weather forecast. </p> <p> Every city can be marked as visited or bookmarked by the users. Once a destination is marked as visited, users can evaluate it and leave reviews for it. </p> <p> Also, users can see some statistics about their travel activity and manage their travel itineraries, profiles, and accounts. </p>",
+    "<p>This project is the website you're exploring right now.</p>",
+    "<p>This is not a stand-alone project, but a collection of solved small Front-End projects created based on the designs provided by Frontend Mentor and iCodeThis websites. </p> <p> Visit correspondent GitHub repository to see all of these small Front-End projects in detail. Some of them are hosted. </p>",
+    "<p>As its name suggests, this is a clasic game of Tic Tac Toe with options for single-player matches at different difficulty levels and multiplayer mode for interactive play. For medium and hard difficulties, I have used Minmax algrotihm.</p>",
+    "<p>This project is a crawler that extracts the data from any Wikipedia page provided via a link and computes statistics with it. The results are saved in a file, and users have the option to choose whether the crawler should take prepositions into account or not.</p>",
+    "<p>This web application, created during my second year as a student, provides users a platform to manage resources related to their pets.</p>",
+  ];
   const projectSkills = [
     [
       "HTML",
@@ -189,6 +226,14 @@ function modalsController() {
     "December 2022 - January 2023",
     "March 2022 - June 2022",
   ];
+  const projectLinks = [
+    ["https://youtu.be/YLdVbMWkYKw", "https://github.com/radusofron/Licenta"],
+    ["false", "https://github.com/radusofron/Personal-Website"],
+    ["false", "https://github.com/radusofron/Front-End-projects"],
+    ["false", "false"],
+    ["false", "false"],
+    ["false", "https://github.com/radu781/Pet-Smart-Manager"],
+  ];
 
   // Extract modal elements
   const imageElement = document.getElementById("modal-image");
@@ -196,6 +241,7 @@ function modalsController() {
   const descriptionElement = document.getElementById("modal-description");
   const skillsList = document.getElementById("modal-skills");
   const dateElement = document.getElementById("modal-date");
+  const linksElements = document.querySelectorAll(".project-link");
 
   // Detect which project was clicked, display modal, populate it, and hide it when button is clicked
   for (let index = 0; index < numberOfProjects; index++) {
@@ -205,9 +251,10 @@ function modalsController() {
         // Populate project
         addImage(projectImages, index, imageElement);
         nameElement.textContent = projectNames[index];
-        descriptionElement.textContent = projectDescriptions[index];
+        descriptionElement.innerHTML = projectDescriptions[index];
         addSkills(projectSkills, index, skillsList);
         dateElement.textContent = projectDates[index];
+        addLinks(projectLinks, index, linksElements);
 
         // Show modal
         modal.classList.add("active");

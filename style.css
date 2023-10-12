@@ -559,6 +559,11 @@ article.projects .grid .project h3 {
   font-weight: var(--fw-regular);
   color: var(--text);
 }
+.modal-container .modal .description * {
+  font-size: var(--fs-paragraph);
+  font-weight: var(--fw-regular);
+  color: var(--text);
+}
 .modal-container .modal ul {
   list-style: none;
   display: flex;
@@ -602,6 +607,13 @@ article.projects .grid .project h3 {
 
   cursor: pointer;
   transition: transform 200ms;
+}
+.modal-container .modal .project-links a.inactive {
+  cursor: default;
+  opacity: 0.25;
+}
+.modal-container .modal .project-links a.inactive:hover {
+  transform: scale(1);
 }
 .modal-container .modal .project-links a:hover {
   transform: scale(1.125);
