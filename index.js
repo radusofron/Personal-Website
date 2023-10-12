@@ -285,17 +285,20 @@ function phoneMenuController() {
   // Open phone menu
   hamburgerMenu.addEventListener("click", function () {
     phoneMenu.classList.add("active");
+    body.classList.add("inactive");
   });
 
   // Close phone menu when close button clicked
   closeButton.addEventListener("click", function () {
     phoneMenu.classList.remove("active");
+    body.classList.remove("inactive");
   });
 
   // Close phone menu when link clicked
   menuLinks.forEach((menuLink) => {
     menuLink.addEventListener("click", function () {
       phoneMenu.classList.remove("active");
+      body.classList.remove("inactive");
     });
   });
 }

@@ -48,16 +48,16 @@ html {
 body {
   /* Light Mode */
   --body-bg: #e8e8f7;
-  --container-bg: rgb(253, 255, 252, 0.5);
-  --container-border: rgb(253, 255, 252, 0.8);
+  --container-bg: #f2f4f9;
+  --container-border: #f8fafb;
   --header-bg: #f3f4f9;
   --icon-bg: #ff474f;
-  --box-shadow: rgb(50, 52, 50, 0.25);
+  --box-shadow: #c1c4c7;
   --text: #323432;
-  --side-text: rgb(50, 52, 50, 0.5);
+  --side-text: #929495;
   --highlight-text: #ff474f;
   --underline-text: #ff474f;
-  --selection-text: rgb(255, 71, 79, 0.25);
+  --selection-text: #f8cacc;
   --scroll-bar-background: #e8e8f7;
   --scroll-bar-thumb: rgb(50, 52, 50, 0.25);
   --scroll-bar-thumb-hover: rgb(50, 52, 50, 0.5);
@@ -69,16 +69,16 @@ body {
 body.dark {
   /* Dark Mode */
   --body-bg: #1a0e43;
-  --container-bg: rgb(253, 255, 252, 0.15);
+  --container-bg: #3c325f;
   --container-border: #261a4d;
   --header-bg: #3c325f;
   --icon-bg: #765bdd;
-  --box-shadow: rgb(253, 255, 252, 0.1);
-  --text: rgb(253, 255, 252, 0.9);
+  --box-shadow: #4f466f;
+  --text: #eaeaed;
   --side-text: #8c8cba;
   --highlight-text: #977bff;
-  --underline-text: rgb(253, 255, 252, 0.9);
-  --selection-text: rgb(5, 168, 170, 0.25);
+  --underline-text: #eaeaed;
+  --selection-text: #b9e2e2;
   --scroll-bar-background: #1a0e43;
   --scroll-bar-thumb: rgb(253, 255, 252, 0.15);
   --scroll-bar-thumb-hover: #261a4d;
