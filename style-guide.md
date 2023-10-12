@@ -9,7 +9,7 @@
 
 ### Font Size
 
-#### Large Screem
+#### Large Screen
 
 - Big Title: 3.125rem (50px)
 - Title: 2.5rem (40px)
