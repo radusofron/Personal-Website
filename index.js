@@ -230,7 +230,7 @@ function modalsController() {
     ["https://youtu.be/YLdVbMWkYKw", "https://github.com/radusofron/Licenta"],
     ["false", "https://github.com/radusofron/Personal-Website"],
     ["false", "https://github.com/radusofron/Front-End-projects"],
-    ["false", "false"],
+    ["https://www.youtube.com/watch?v=YKSBUX4bCpM", "false"],
     ["false", "false"],
     ["false", "https://github.com/radu781/Pet-Smart-Manager"],
   ];
