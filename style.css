@@ -78,7 +78,7 @@ body.dark {
   --side-text: #8c8cba;
   --highlight-text: #977bff;
   --underline-text: #eaeaed;
-  --selection-text: #b9e2e2;
+  --selection-text: rgb(5, 168, 170, 0.5);
   --scroll-bar-background: #1a0e43;
   --scroll-bar-thumb: rgb(253, 255, 252, 0.15);
   --scroll-bar-thumb-hover: #261a4d;
@@ -542,7 +542,6 @@ article.projects .grid .project h3 {
 }
 .modal-container .modal .logo-container {
   height: 150px;
-  vertical-align: center;
 }
 .modal-container .modal h3 {
   margin-top: var(--vertical-large-space);
@@ -552,17 +551,21 @@ article.projects .grid .project h3 {
   color: var(--text);
 }
 .modal-container .modal h3:first-of-type {
-  margin-top: var(--vertical-medium-space);
+  margin-top: var(--vertical-normal-space);
 }
 .modal-container .modal .description {
   font-size: var(--fs-paragraph);
   font-weight: var(--fw-regular);
   color: var(--text);
 }
-.modal-container .modal .description * {
+.modal-container .modal .description p {
+  padding-bottom: var(--vertical-small-space);
   font-size: var(--fs-paragraph);
   font-weight: var(--fw-regular);
   color: var(--text);
+}
+.modal-container .modal .description p:last-of-type {
+  padding-bottom: 0;
 }
 .modal-container .modal ul {
   list-style: none;
